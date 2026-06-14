@@ -1,0 +1,147 @@
+/* Light Monochrome Theme */
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #1a1a1a;
+    --secondary-text: #555555;
+    --accent-light: #f4f4f4;
+    --accent-medium: #dddddd;
+    --accent-dark: #333333;
+    --container-width: 1000px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--accent-medium);
+    padding: 30px 0;
+}
+
+header h1 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+nav {
+    text-align: center;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--secondary-text);
+    text-decoration: underline;
+}
+
+/* Main Content */
+main {
+    padding: 60px 0;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.intro h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+.content-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+.text-content {
+    flex: 1;
+}
+
+.text-content article {
+    margin-bottom: 30px;
+}
+
+.text-content h3 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--accent-dark);
+    display: inline-block;
+}
+
+.text-content p {
+    color: var(--secondary-text);
+}
+
+.image-content {
+    flex: 1;
+}
+
+.image-content img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(100%);
+    border: 5px solid var(--accent-medium);
+    transition: filter 0.5s ease;
+}
+
+.image-content img:hover {
+    filter: grayscale(0%);
+}
+
+/* Footer */
+footer {
+    background-color: var(--accent-light);
+    border-top: 1px solid var(--accent-medium);
+    padding: 40px 0;
+    text-align: center;
+    color: var(--secondary-text);
+    font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .intro h2 {
+        font-size: 2rem;
+    }
+
+    .image-content {
+        order: -1; /* Image first on mobile */
+    }
+}
